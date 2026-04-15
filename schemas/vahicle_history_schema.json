@@ -1,0 +1,5 @@
+{
+"customer_id": "string",
+"vehicle_model": "string",
+"service_history": "string"
+}

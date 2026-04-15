@@ -1,0 +1,7 @@
+{
+"case_id": "string",
+"description": "string",
+"priority": "string",
+"customer_id": "string",
+"status": "string"
+}
