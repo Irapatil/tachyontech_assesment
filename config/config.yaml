@@ -1,9 +1,0 @@
-salesforce:
-instance_url: "https://your-instance.salesforce.com"
-api_version: "v58.0"
-
-llm:
-model: "gpt-4o-mini"
-
-vector_store:
-top_k: 3

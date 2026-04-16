@@ -1,4 +1,10 @@
-requests
 fastapi
+uvicorn
+autogen-agentchat
+autogen-ext
 openai
-pydantic
+requests
+langchain
+faiss-cpu
+pypdf
+tiktoken

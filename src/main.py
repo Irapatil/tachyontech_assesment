@@ -1,12 +1,25 @@
-from salesforce_client import SalesforceClient
-from rag_pipeline import retrieve_solution
-from agents import decision_agent
+from fastapi import FastAPI, HTTPException
+from orchestrator import run_case_workflow
 
-def process_case(case_data, sf_client, vector_store):
-query = case_data["description"]
+app = FastAPI(
+    title="Salesforce Multi-Agent Service Automation",
+    description="Closed-loop AI Agent System using AutoGen + RAG",
+    version="1.0"
+)
 
-context = retrieve_solution(query, vector_store)
-solution = decision_agent(context)
 
-sf_client.update_case(case_data["case_id"], solution)
-sf_client.create_task(case_data["case_id"])
+@app.get("/")
+def root():
+    return {"message": "🚀 AI Multi-Agent System Running"}
+
+
+@app.post("/trigger-case")
+async def trigger_case(case_id: str):
+    if not case_id:
+        raise HTTPException(status_code=400, detail="case_id is required")
+
+    result = await run_case_workflow(case_id)
+
+    if result["status"] == "failed":
+        raise HTTPException(status_code=500, detail=result["error"])
+    return result

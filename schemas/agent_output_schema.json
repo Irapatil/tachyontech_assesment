@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Final Output",
+  "type": "object",
+  "properties": {
+    "summary": { "type": "string" },
+    "sentiment": {
+      "type": "string",
+      "enum": ["Critical", "Normal"]
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["High", "Medium", "Low"]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["update_case", "create_task", "alert_if_critical"]
+      }
+    }
+  },
+
+  "required": ["summary", "sentiment", "priority", "actions"]
+
+}
