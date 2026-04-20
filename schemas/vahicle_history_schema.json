@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Vehicle History Schema",
+  "type": "object",
+  "properties": {
+    "vehicle_id": { "type": "string" },
+    "model": { "type": "string" },
+    "year": { "type": "integer" },
+    "service_records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string" },
+          "issue": { "type": "string" },
+          "resolution": { "type": "string" }
+        }
+      }
+    }
+  },
+  "required": ["vehicle_id"]
+}
+

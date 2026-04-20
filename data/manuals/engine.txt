@@ -1,0 +1,6 @@
+Engine overheating is caused by:
+- Low coolant
+- Radiator blockage
+
+Fix:
+Check coolant and radiator system.

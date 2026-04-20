@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Salesforce Case Schema",
+  "type": "object",
+  "properties": {
+    "Id": { "type": "string" },
+    "Subject": { "type": "string" },
+    "Description": { "type": "string" },
+    "Priority": { "type": "string" },
+    "Status": { "type": "string" },
+    "ContactId": { "type": "string" },
+    "Vehicle_Id__c": { "type": "string" }
+  },
+  "required": ["Id", "Subject"]
+
+}
+
+
+
